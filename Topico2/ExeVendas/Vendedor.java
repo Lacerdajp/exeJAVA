@@ -1,4 +1,4 @@
-package Topico2.ExeVendas;
+package ExeVendas;
 
 public class Vendedor {
     String empresa;
