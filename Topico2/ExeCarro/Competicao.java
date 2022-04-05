@@ -1,7 +1,71 @@
-package ExeCarro;
+package Topico2.ExeCarro;
+
 
 public class Competicao {
-    int quantidadeCars;
-    Carro[] carros;
+    int quantidadeMaxCars=6;
+    int quantidadeNaCorrida=0;
+    Carro[] carros=new Carro[quantidadeMaxCars];
 
+    public void adicionaCarro(String nomeCarro) {
+        carros[quantidadeNaCorrida]=new Carro(nomeCarro);
+        quantidadeNaCorrida++;
+    }
+    public void escolhaAument(String nomeCarro,int vel) {
+        for (Carro carro : carros) {
+            if(carro==null) break;
+            if(carro.nomeCarro==nomeCarro){
+                carro.aumentarVel(vel);
+            }
+        }
+    }
+    public void escolhaDim(String nomeCarro,int vel) {
+        for (Carro carro : carros) {
+            if(carro==null) break;
+            if(carro.nomeCarro==nomeCarro){
+                carro.diminuirVel(vel);
+            }
+        }
+    }
+    public void corrida(int tempo) {
+        for (Carro carro : carros) {
+            if(carro==null) break;
+                carro.percorrer(tempo);
+        }
+        ordenacao();
+        campeoes();
+    }
+    public void campeoes() {
+       for (int carro = 0; carro < this.quantidadeMaxCars; carro++) {
+        if(carros[carro]==null) break;  
+           switch (carro) {
+               case 0:
+                   System.out.println("Primeiro: "+carros[carro].nomeCarro +" "+carros[carro].distanciaTotal );
+                   break;
+                case 1:
+                   System.out.println("Segundo: "+carros[carro].nomeCarro+" "+carros[carro].distanciaTotal  );
+                   break;
+                case 2:
+                   System.out.println("Terceiro: "+carros[carro].nomeCarro+" "+carros[carro].distanciaTotal  );
+                   break;
+                
+                
+               default:
+               System.out.println("Retardatarios: "+carros[carro].nomeCarro+" "+carros[carro].distanciaTotal  );
+                   break;
+           }
+       }
+    }
+    public void ordenacao() {
+        for (int fim =this.quantidadeMaxCars; fim> 0; fim--) {
+            for (int i = 0; i < fim; i++) {
+                if(carros[i]==null||carros[i+1]==null) break;  
+                if(carros[i].distanciaTotal<carros[i+1].distanciaTotal){
+                    Carro temp=carros[i];
+                    carros[i]=carros[i+1];
+                    carros[i+1]=temp;
+                }
+                
+            }
+        }
+    }
 }

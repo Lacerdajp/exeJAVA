@@ -1,33 +1,43 @@
-package ExeCarro;
+package Topico2.ExeCarro;
+
 
 public class Carro {
-
-    String marca;
-
-    public Carro(String marca) {
-        this.marca = marca;
+    String nomeCarro;
+    
+    public Carro(String nomeCarro) {
+        this.nomeCarro = nomeCarro;
     }
 
     int vel = 0;
     int tempo = 0;
     int distanciaTotal = 0;
     int distancia = 0;
+    int posicao;
+    public int getPosicao() {
+        return posicao;
+    }
 
-    void aumentarVel(int vel) {
+    public void setPosicao(int posicao) {
+        this.posicao = posicao;
+    }
+
+    public void aumentarVel(int vel) {
         this.vel = vel + this.vel;
     }
 
-    void diminuirVel(int vel) {
-        this.vel = vel + this.vel;
+    public void diminuirVel(int vel) {
+        this.vel = this.vel-vel;
+        System.out.println(this.vel);
     }
 
-    void percorrer(int tempo) {
-        this.distancia = tempo / this.vel;
+    public void percorrer(int tempo) {
+        this.distancia = tempo * this.vel;
         distanciaPercorrida();
     }
 
-    int distanciaPercorrida() {
+    public int distanciaPercorrida() {
         this.distanciaTotal = this.distancia;
         return this.distanciaTotal;
     }
+    
 }
