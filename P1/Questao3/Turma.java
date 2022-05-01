@@ -11,7 +11,8 @@ public class Turma {
         for (int i=0;i<alunos.length;i++) {
             System.out.println("Digite o nome,a primeira letra do sexo(F ou M), idade,e as 4 notas respectivamente");
             if(i!=0)sc.nextLine();
-            alunos[i]=new Aluno(sc.nextLine(), sc.nextLine().charAt(0), sc.nextInt(), sc.nextDouble(), sc.nextDouble(),sc.nextDouble(), sc.nextDouble());
+            alunos[i]=new Aluno(sc.nextLine(), sc.nextLine().charAt(0),
+            sc.nextInt(), sc.nextDouble(), sc.nextDouble(),sc.nextDouble(), sc.nextDouble());
         }
     }
     public Aluno[] getAlunos() {
