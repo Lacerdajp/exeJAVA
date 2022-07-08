@@ -1,8 +1,8 @@
 package Topico2.ExeTimedeFut;
 
 public class Jogador {
-    PosicaoTatica posicao;
-    String nomeJogador;
+    private PosicaoTatica posicao;
+    private String nomeJogador;
     
     public Jogador(PosicaoTatica posicao, String nomeJogador) {
         this.posicao = posicao;
