@@ -25,9 +25,9 @@ public class Main {
         System.out.println("Funcionario:    |"+ "Empresa  |"+" comissao  " );
         for (Empresa empresa : tenis.getEmpresas()) {
             if(empresa==null) break;
-            for (Vendedor vendedor : empresa.getVendedor()) {
+            for (Vendedor vendedor : empresa.getVendedores()) {
                 if(vendedor==null) break;
-                 vendedor.ordenacao();   
+                vendedor.ordenacao();
                  System.out.println(vendedor.getNome()+" |"+empresa.getRazaoSocial()+" |"+tenis.comissaoVendedor(vendedor));
             }
             

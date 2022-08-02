@@ -1,10 +1,10 @@
 package Topico2.ExeVendas;
 
+import java.util.ArrayList;
+
 public class Empresa {
-    String razaoSocial;
-    int numeroMaxVendedor=5;
-    int numeroAtualVendedor=0;
-    Vendedor[] vendedor= new Vendedor[numeroMaxVendedor];
+    private String razaoSocial;
+    private ArrayList<Vendedor> vendedores= new ArrayList<Vendedor>();
     public Empresa(String razaoSocial) {
         this.razaoSocial = razaoSocial;
     }
@@ -14,12 +14,11 @@ public class Empresa {
     public void setRazaoSocial(String razaoSocial) {
         this.razaoSocial = razaoSocial;
     }
-    public Vendedor[] getVendedor() {
-        return vendedor;
+    public ArrayList<Vendedor> getVendedores() {
+        return vendedores;
     }
-    public void setVendedor(Vendedor vendedor) {
-        this.vendedor[numeroAtualVendedor] = vendedor;
-        numeroAtualVendedor++;
+    public void setVendedores(Vendedor vendedor) {
+        this.vendedores.add(vendedor);
         
     }
 }

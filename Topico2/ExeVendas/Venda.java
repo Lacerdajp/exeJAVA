@@ -1,8 +1,8 @@
 package Topico2.ExeVendas;
 
 public class Venda {
-    int mes;
-    double valor;
+    private int mes;
+    private double valor;
     public int getMes() {
         return mes;
     }

@@ -1,11 +1,10 @@
 package Topico2.ExeVendas;
 
+import java.util.ArrayList;
 
 public class Vendedor {
-    String nome;
-    int numeroMAxVendas=12;
-    int numeroAtualVend=0;
-    Venda[] vendas= new Venda[numeroMAxVendas];
+    private String nome;
+    private ArrayList<Venda> vendas=new ArrayList<Venda>();
     public Vendedor(String nome) {
         this.nome = nome;
     }
@@ -15,25 +14,14 @@ public class Vendedor {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public Venda[] getVendas() {
+    public ArrayList<Venda> getVendas() {
         return vendas;
     }
     public void setVendas(Venda venda) {
-        this.vendas[numeroAtualVend] = venda;
-        numeroAtualVend++;
+        this.vendas.add(venda);
     }
     public void ordenacao() {
-        for (int fim =this.numeroAtualVend; fim> 0; fim--) {
-            for (int i = 0; i < fim; i++) {
-                if(vendas[i]==null||vendas[i+1]==null) break;  
-                if(vendas[i].mes>vendas[i+1].mes){
-                    Venda temp=vendas[i];
-                    vendas[i]=vendas[i+1];
-                    vendas[i+1]=temp;
-                }
-                
-            }
-        }
+       vendas.sort((o1, o2) ->Integer.compare(o1.getMes(), o2.getMes()) );
     }
 
 
