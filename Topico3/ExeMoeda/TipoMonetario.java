@@ -1,25 +1,15 @@
 package Topico3.ExeMoeda;
 
 public enum TipoMonetario {
-    Real(1),Dolar(1.82),Euro(2.39), Inexistente(0);
-    double valor;
-    TipoMonetario(double valor){
-        this.valor=valor;
+    real(1.00), dolar(1.82), euro(2.39);
+    double  cota;
+    TipoMonetario(double cota){
+        this.cota=cota;
     }
-    public double getValor() {
-        return valor;
+    public double getCota() {
+        return cota;
     }
-    public TipoMonetario classificacao(String nome ) {
-        switch (nome) {
-            case "Real":
-                return TipoMonetario.Real;       
-            case "Euro":
-                return TipoMonetario.Euro;
-            case "Dolar":
-                return TipoMonetario.Dolar;
-            default:
-                return TipoMonetario.Inexistente;
-        }
+    public void setCota(double cota) {
+        this.cota = cota;
     }
-
 }

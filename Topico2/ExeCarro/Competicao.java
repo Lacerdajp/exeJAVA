@@ -1,10 +1,11 @@
 package Topico2.ExeCarro;
 
+import java.util.ArrayList;
 
 public class Competicao {
     int quantidadeMaxCars=6;
     int quantidadeNaCorrida=0;
-    Carro[] carros=new Carro[quantidadeMaxCars];
+    private ArrayList<Carro> carros=new ArrayList<Carro>();
 
     public void adicionaCarro(String nomeCarro) {
         carros[quantidadeNaCorrida]=new Carro(nomeCarro);
