@@ -1,4 +1,4 @@
-package P1.Questao3;
+package P1Original.Questao3;
 
 import java.util.Scanner;
 
@@ -11,6 +11,7 @@ public class Main {
         for (int i = 0; i < prof.getTurma().getAlunos().length; i++) {
             prof.getTurma().getAlunos()[i].responderChamada();
             prof.mediaFinal(prof.getTurma().getAlunos()[i]);
+            prof.getTurma().getAlunos()[i].imprimirInformação();;
         }
     }
     //incompleto

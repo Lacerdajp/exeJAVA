@@ -1,4 +1,4 @@
-package P1.Questao3;
+package P1Original.Questao3;
 
 public class Calculadora {
     private int resultInt;

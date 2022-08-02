@@ -1,15 +1,14 @@
 package Topico2.ExeCarro;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Competicao {
-    int quantidadeMaxCars=6;
-    int quantidadeNaCorrida=0;
+
     private ArrayList<Carro> carros=new ArrayList<Carro>();
 
     public void adicionaCarro(String nomeCarro) {
-        carros[quantidadeNaCorrida]=new Carro(nomeCarro);
-        quantidadeNaCorrida++;
+        carros.add(new Carro(nomeCarro));
     }
     public void escolhaAument(String nomeCarro,int vel) {
         for (Carro carro : carros) {
@@ -36,37 +35,28 @@ public class Competicao {
         campeoes();
     }
     public void campeoes() {
-       for (int carro = 0; carro < this.quantidadeMaxCars; carro++) {
-        if(carros[carro]==null) break;  
+       for (int carro = 0; carro < this.carros.size(); carro++) {
+        if(carros.get(carro)==null) break;  
            switch (carro) {
                case 0:
-                   System.out.println("Primeiro: "+carros[carro].getNomeCarro() +" "+carros[carro].getDistanciaTotal() );
+                   System.out.println("Primeiro: "+carros.get(carro).getNomeCarro() +" "+carros.get(carro).getDistanciaTotal() );
                    break;
                 case 1:
-                   System.out.println("Segundo: "+carros[carro].getNomeCarro()+" "+carros[carro].getDistanciaTotal()  );
+                   System.out.println("Segundo: "+carros.get(carro).getNomeCarro() +" "+carros.get(carro).getDistanciaTotal() );
                    break;
                 case 2:
-                   System.out.println("Terceiro: "+carros[carro].getNomeCarro()+" "+carros[carro].getDistanciaTotal()  );
+                   System.out.println("Terceiro: "+carros.get(carro).getNomeCarro() +" "+carros.get(carro).getDistanciaTotal()) ;
                    break;
                 
                 
                default:
-               System.out.println("Retardatarios: "+carros[carro].getNomeCarro()+" "+carros[carro].getDistanciaTotal()  );
+               System.out.println("Retardatarios: "+carros.get(carro).getNomeCarro() +" "+carros.get(carro).getDistanciaTotal() );
                    break;
            }
        }
     }
     public void ordenacao() {
-        for (int fim =this.quantidadeMaxCars; fim> 0; fim--) {
-            for (int i = 0; i < fim; i++) {
-                if(carros[i]==null||carros[i+1]==null) break;  
-                if(carros[i].getDistanciaTotal()<carros[i+1].getDistanciaTotal()){
-                    Carro temp=carros[i];
-                    carros[i]=carros[i+1];
-                    carros[i+1]=temp;
-                }
-                
-            }
-        }
+        carros.sort((o1, o2) -> Integer.compare(o1.getDistanciaTotal(), o2.getDistanciaTotal()));
+        Collections.reverse(carros);
     }
 }

@@ -61,7 +61,6 @@ public class Carro {
 
     public void diminuirVel(int vel) {
         this.vel = this.vel-vel;
-        System.out.println(this.vel);
     }
 
     public void percorrer(int tempo) {
@@ -69,9 +68,8 @@ public class Carro {
         distanciaPercorrida();
     }
 
-    public int distanciaPercorrida() {
+    public void distanciaPercorrida() {
         this.distanciaTotal = this.distancia;
-        return this.distanciaTotal;
     }
     
 }
