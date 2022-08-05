@@ -1,6 +1,5 @@
 package Topico2.ExeCarro;
 
-
 public class Carro {
     private String nomeCarro;
     private int vel = 0;

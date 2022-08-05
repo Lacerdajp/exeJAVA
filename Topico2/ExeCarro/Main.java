@@ -3,7 +3,6 @@ package Topico2.ExeCarro;
 public class Main {
     public static void main(String[] args) {
         Competicao corridaAmericas=new Competicao();
-
       
         corridaAmericas.adicionaCarro("Ferrari");
         corridaAmericas.adicionaCarro("Lamburguine");
